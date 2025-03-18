@@ -1,33 +1,28 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Projeto_Event_.Domains;
 
-namespace Projeto_Event_.Domain
+namespace Projeto_Event_.Domains
 {
-    [Table ("Presença")]
+    [Table ("Presencas")]
     public class Presencas
     {
         [Key]
         public Guid IdPresença { get; set; }
 
         [Column(TypeName = "BIT")]
-        [Required(ErrorMessage = "Presença é obrigatoria!")]
-
+        [Required(ErrorMessage = "A situação é obrigatoria!")]
         public bool Situacao { get; set; }
-
-        //Ref. tabela Usuario
-        [Required(ErrorMessage = "Usuario é obrigatório!")]
-
-        [ForeignKey ("IdEvento, IdUsuario")]
 
         public Guid IdUsuario { get; set; }
 
-        public Guid Usuario { get; set; }
-        public Guid IdEvento { get; set; }
+        [ForeignKey("IdUsuario")]
+        public Usuarios? Usuario { get; set; }
 
-        [Column(TypeName = "VARCHAR(60)")]
-        [Required(ErrorMessage = "Presença é obrigatória!")]
-        public string? presença { get; set; }
+        public Guid EventosID { get; set; }
+
+        [ForeignKey ("IdEvento")]
+        public Eventos? eventos { get; set; }  
         
-
     }
 }

@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Projeto_Event_.Domains;
 using Microsoft.EntityFrameworkCore;
-using Projeto_Event_.Domain;
 
 namespace Projeto_Event_.Context
 {
@@ -18,19 +17,19 @@ namespace Projeto_Event_.Context
         /// Define que as tabelas se transformarao em tabelas no BD
         /// </summary>
 
-        public DbSet<Usuarios> Usuario { get; set; }
-        public DbSet<TipoUsuario> TipoUsuario { get; set; }
-        public DbSet<TiposUsuarios> TipoEvento { get; set; }
-        public DbSet<Eventos> Evento { get; set; }
-        public DbSet<Instituicao> Instituição { get; set; }
-        public DbSet<Presencas> Presença { get; set; }
-        public DbSet<ComentariosEventos> ComentarioEvento { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
+        public DbSet<TiposUsuarios> TiposUsuarios { get; set; }
+        public DbSet<TiposUsuarios> TiposEventos { get; set; }
+        public DbSet<Eventos> Eventos { get; set; }
+        public DbSet<Instituicoes> Intituicoes {get; set; }
+        public DbSet<Presencas> Presencas { get; set; }
+        public DbSet<ComentariosEventos> ComentariosEventos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server =DESKTOP-VINIDR3; Database = EventPlus; User Id = sa; Pwd = Senai@134; TrustServerCertificate=true;");
+                optionsBuilder.UseSqlServer("Server =DESKTOP-VINIDR3\\SQLEXPRESS; Database = EventPlus; User Id = sa; Pwd = Senai@134; TrustServerCertificate=true;");
                 //optionsBuilder.UseSqlServer("Server =DESKTOP-VINIDR3\\SQLEXPRESS; Database = filmes_julia; Integrated Security = true; TrustServerCertificate=true;");
 
             }

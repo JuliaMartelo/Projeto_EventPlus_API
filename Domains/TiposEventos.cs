@@ -1,19 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Projeto_Event_.Domains
+namespace Projeto_Event_.Domain
 {
-    [Table("TipoUsuario")]
+        [Table ("TiposEventos")]
     public class TiposEventos
     {
         [Key]
-
-        public Guid IdTipoUsuario { get; set; }
-        public string? tipoUsuario { get; set; }
+        public Guid IdTipoEvento { get; set; }
 
         [Column(TypeName = "VARCHAR(30)")]
-        [Required(ErrorMessage = "O tipo de usuario e obrigatorio!")]
-        public string? TituloTipoUsuario { get; set; }
-
+        [Required(ErrorMessage = "Tipo do evento é obrigatorio!")]
+        public string? TituloTipoEvento { get; set; }
+      
     }
 }

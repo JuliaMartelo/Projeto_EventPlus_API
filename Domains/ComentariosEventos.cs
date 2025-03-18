@@ -1,21 +1,33 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Projeto_Event_.Domains;
 
-namespace Projeto_Event_.Domain
+namespace Projeto_Event_.Domains
 {
-    [Table("ComentarioEvento")]
+    [Table("ComentariosEventos")]
     public class ComentariosEventos
     {
         [Key]
         public Guid IdComentarioEvento { get; set; }
-        [ForeignKey("IdEvento, IdUsuario")]
-        public Guid IdEvento { get; set; }
-        public Guid IdUsuario { get; set; }
-        public Guid Descrição { get; set; }
-        public Guid Exibe { get; set; }
-        public string? comentarioEvento { get; set; }
+
         [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage = "Comentário do evento é obrigatório!")]
-        public string? Comentario { get; set; }
+        [Required(ErrorMessage = "Descrição do evento é obrigatório!")]
+        public Guid Descrição { get; set; }
+
+        [Column(TypeName = "BIT")]
+        [Required(ErrorMessage = "O exibir é obrigatório!")]
+        public bool? Exibe { get; set; }
+
+        public Guid IdEvento { get; set; }
+
+        [ForeignKey("IdEvento")]
+        public Eventos? Eventos { get; set; }
+        public Guid IdUsuario { get; set; }
+
+        [ForeignKey("IdUsuario")]
+        public Usuarios? Usuarios { get; set; }
+
+
+
     }
 }

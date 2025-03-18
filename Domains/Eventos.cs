@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Projeto_Event_.Domain;
-using Projeto_Event_.Domains;
 
-namespace Event_.Domains
+namespace Projeto_Event_.Domains
 {
-    [Table("Evento")]
-    public class Evento
+    [Table("Eventos")]
+    public class Eventos
     {
         [Key]
-        public Guid EventoID { get; set; }
+        public Guid IdEvento { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "O nome do evento e  obrigatorio!")]
@@ -19,20 +18,20 @@ namespace Event_.Domains
         [Required(ErrorMessage = "A descricao e obrigatoria!")]
         public string? Descricao { get; set; }
 
-        [Column(TypeName = "DATE")]
+        [Column(TypeName = "DATETIME")]
         [Required(ErrorMessage = "a data do evento e obrigatorio!")]
         public DateTime DataEvento { get; set; }
 
-        public Guid TipoEventoID { get; set; }
 
-        [ForeignKey("TiposEventosID")]
+        public Guid TipoEventoID { get; set; }
+        [ForeignKey("TipoEventoID")]
         public TiposEventos? tipoevento { get; set; }
 
+        
         public Guid InstituicoesID { get; set; }
-
         [ForeignKey("InstituicoesID")]
+        public Instituicoes? instituicao { get; set; }
 
-        public Instituicao? instituicao { get; set; }
 
         public Presencas? presencas { get; set; }
     }
