@@ -1,4 +1,4 @@
-﻿using Projeto_Event_.Domain;
+﻿using Projeto_Event_.Domains;
 
 namespace Projeto_Event_.Interfaces
 {

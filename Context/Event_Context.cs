@@ -19,7 +19,7 @@ namespace Projeto_Event_.Context
 
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<TiposUsuarios> TiposUsuarios { get; set; }
-        public DbSet<TiposUsuarios> TiposEventos { get; set; }
+        public DbSet<TiposEventos> TiposEventos { get; set; }
         public DbSet<Eventos> Eventos { get; set; }
         public DbSet<Instituicoes> Intituicoes {get; set; }
         public DbSet<Presencas> Presencas { get; set; }
@@ -29,9 +29,8 @@ namespace Projeto_Event_.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server =DESKTOP-VINIDR3\\SQLEXPRESS; Database = EventPlus; User Id = sa; Pwd = Senai@134; TrustServerCertificate=true;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-VINIDR3; Database = EventPlus; User Id = sa; Pwd = Senai@134; TrustServerCertificate=true;");
                 //optionsBuilder.UseSqlServer("Server =DESKTOP-VINIDR3\\SQLEXPRESS; Database = filmes_julia; Integrated Security = true; TrustServerCertificate=true;");
-
             }
 
 

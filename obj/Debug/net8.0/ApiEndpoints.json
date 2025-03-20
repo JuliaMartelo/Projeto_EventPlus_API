@@ -1,0 +1,91 @@
+[
+  {
+    "ContainingType": "Projeto_Event_.Controllers.TiposEventosController",
+    "Method": "Post",
+    "RelativePath": "api/TiposEventos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tiposEventos",
+        "Type": "Projeto_Event_.Domains.TiposEventos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.TiposEventosController",
+    "Method": "Get",
+    "RelativePath": "api/TiposEventos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.TiposEventosController",
+    "Method": "Delete",
+    "RelativePath": "api/TiposEventos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.TiposEventosController",
+    "Method": "Put",
+    "RelativePath": "api/TiposEventos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "tiposEventos",
+        "Type": "Projeto_Event_.Domains.TiposEventos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.TiposEventosController",
+    "Method": "GetById",
+    "RelativePath": "api/TiposEventos/BuscarPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.TiposUsuariosController",
+    "Method": "Get",
+    "RelativePath": "api/TiposUsuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

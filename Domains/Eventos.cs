@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Projeto_Event_.Domain;
+using Projeto_Event_.Domains;
 
 namespace Projeto_Event_.Domains
 {

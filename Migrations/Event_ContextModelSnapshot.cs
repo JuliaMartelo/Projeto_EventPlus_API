@@ -22,21 +22,6 @@ namespace Projeto_Event_.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Projeto_Event_.Domain.TiposEventos", b =>
-                {
-                    b.Property<Guid>("IdTipoEvento")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("TituloTipoEvento")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(30)");
-
-                    b.HasKey("IdTipoEvento");
-
-                    b.ToTable("TiposEventos");
-                });
-
             modelBuilder.Entity("Projeto_Event_.Domains.ComentariosEventos", b =>
                 {
                     b.Property<Guid>("IdComentarioEvento")
@@ -153,6 +138,21 @@ namespace Projeto_Event_.Migrations
                     b.ToTable("Presencas");
                 });
 
+            modelBuilder.Entity("Projeto_Event_.Domains.TiposEventos", b =>
+                {
+                    b.Property<Guid>("IdTipoEvento")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("TituloTipoEvento")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(30)");
+
+                    b.HasKey("IdTipoEvento");
+
+                    b.ToTable("TiposEventos");
+                });
+
             modelBuilder.Entity("Projeto_Event_.Domains.TiposUsuarios", b =>
                 {
                     b.Property<Guid>("IdTipoUsuario")
@@ -230,7 +230,7 @@ namespace Projeto_Event_.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Projeto_Event_.Domain.TiposEventos", "tipoevento")
+                    b.HasOne("Projeto_Event_.Domains.TiposEventos", "tipoevento")
                         .WithMany()
                         .HasForeignKey("TipoEventoID")
                         .OnDelete(DeleteBehavior.Cascade)

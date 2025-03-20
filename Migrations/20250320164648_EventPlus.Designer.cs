@@ -12,8 +12,8 @@ using Projeto_Event_.Context;
 namespace Projeto_Event_.Migrations
 {
     [DbContext(typeof(Event_Context))]
-    [Migration("20250318163544_DbEventos")]
-    partial class DbEventos
+    [Migration("20250320164648_EventPlus")]
+    partial class EventPlus
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,21 +24,6 @@ namespace Projeto_Event_.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("Projeto_Event_.Domain.TiposEventos", b =>
-                {
-                    b.Property<Guid>("IdTipoEvento")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("TituloTipoEvento")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(30)");
-
-                    b.HasKey("IdTipoEvento");
-
-                    b.ToTable("TiposEventos");
-                });
 
             modelBuilder.Entity("Projeto_Event_.Domains.ComentariosEventos", b =>
                 {
@@ -156,6 +141,21 @@ namespace Projeto_Event_.Migrations
                     b.ToTable("Presencas");
                 });
 
+            modelBuilder.Entity("Projeto_Event_.Domains.TiposEventos", b =>
+                {
+                    b.Property<Guid>("IdTipoEvento")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("TituloTipoEvento")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(30)");
+
+                    b.HasKey("IdTipoEvento");
+
+                    b.ToTable("TiposEventos");
+                });
+
             modelBuilder.Entity("Projeto_Event_.Domains.TiposUsuarios", b =>
                 {
                     b.Property<Guid>("IdTipoUsuario")
@@ -233,7 +233,7 @@ namespace Projeto_Event_.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Projeto_Event_.Domain.TiposEventos", "tipoevento")
+                    b.HasOne("Projeto_Event_.Domains.TiposEventos", "tipoevento")
                         .WithMany()
                         .HasForeignKey("TipoEventoID")
                         .OnDelete(DeleteBehavior.Cascade)

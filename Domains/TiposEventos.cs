@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Projeto_Event_.Domain
+namespace Projeto_Event_.Domains
 {
         [Table ("TiposEventos")]
     public class TiposEventos

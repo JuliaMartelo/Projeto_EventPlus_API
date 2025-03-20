@@ -14,8 +14,9 @@ namespace Projeto_Event_.Domains
        
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "O CNPJ é obrigatória!")]
+        [StringLength(14)]
+        public string? CNPJ { get; set; }
         
-        public string? NomeFantasia { get; set; }
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "O endereço é obrigatória!")]
         public string? Endereço { get; set; }
@@ -23,8 +24,7 @@ namespace Projeto_Event_.Domains
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "O nome fantasia é obrigatória!")]
-        [StringLength(14)]
-        public string? CNPJ { get; set; }
+        public string? NomeFantasia { get; set; }
 
 
         

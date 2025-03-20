@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Projeto_Event_.Migrations
 {
     /// <inheritdoc />
-    public partial class DbEventos : Migration
+    public partial class EventPlus : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,9 +16,9 @@ namespace Projeto_Event_.Migrations
                 columns: table => new
                 {
                     IdInstituicao = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    NomeFantasia = table.Column<string>(type: "VARCHAR(100)", nullable: false),
+                    CNPJ = table.Column<string>(type: "VARCHAR(100)", maxLength: 14, nullable: false),
                     Endereço = table.Column<string>(type: "VARCHAR(100)", nullable: false),
-                    CNPJ = table.Column<string>(type: "VARCHAR(100)", maxLength: 14, nullable: false)
+                    NomeFantasia = table.Column<string>(type: "VARCHAR(100)", nullable: false)
                 },
                 constraints: table =>
                 {
