@@ -17,15 +17,16 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                TiposEventos tipoeventoBuscado = _context?.TiposEventos.Find(Id)!;
+                TiposEventos tipoBuscado = _context.TiposEventos.Find(Id)!;
 
-                if (tipoeventoBuscado != null)
+                if (tipoBuscado != null)
                 {
-                    tipoeventoBuscado.IdTipoEvento = tiposEventos.IdTipoEvento;
-
-                    
+                    tipoBuscado.TituloTipoEvento = tiposEventos.TituloTipoEvento;
                 }
-                _context?.SaveChanges();
+
+                _context.TiposEventos.Update(tipoBuscado!);
+
+                _context.SaveChanges();
             }
             catch (Exception)
             {
@@ -37,16 +38,9 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                TiposEventos tipoeventoBuscado = _context?.TiposEventos.Find(Id)!;
-                if(tipoeventoBuscado != null)
-                {
-                    return tipoeventoBuscado;
-                }
-                    return null!;
-                
+                return _context?.TiposEventos.Find(Id)!;
             }
             catch (Exception)
-
             {
                 throw;
             }
@@ -56,9 +50,11 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                _context?.TiposEventos.Add(tiposEventos);
+                tiposEventos.IdTipoEvento = Guid.NewGuid();
 
-                _context?.SaveChanges();
+                _context.TiposEventos.Add(tiposEventos);
+
+                _context.SaveChanges();
             }
             catch (Exception)
             {
@@ -70,13 +66,14 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                TiposEventos tiposEventosBuscado = _context?.TiposEventos.Find(Id)!;
-                if (tiposEventosBuscado != null)
-                {
-                    _context?.TiposEventos.Remove(tiposEventosBuscado);
-                }
-                   _context?.SaveChanges();
+                TiposEventos tipoBuscado = _context?.TiposEventos.Find(Id)!;
 
+                if (tipoBuscado != null)
+                {
+                    _context?.TiposEventos.Remove(tipoBuscado);
+                }
+
+                _context?.SaveChanges();
             }
             catch (Exception)
             {
@@ -88,9 +85,9 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                List<TiposEventos> listaTiposEventos = _context!.TiposEventos.ToList();
-
-                return listaTiposEventos;
+                return _context.TiposEventos
+                    .OrderBy(tp => tp.TituloTipoEvento)
+                    .ToList();
             }
             catch (Exception)
             {

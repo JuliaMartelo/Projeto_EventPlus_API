@@ -16,13 +16,14 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                TiposUsuarios tiposUsuariosBuscado = _context.TiposUsuarios.Find(Id)!;
+                TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(Id)!;
 
-                if(tiposUsuariosBuscado != null)
+                if (tipoBuscado != null)
                 {
-                    tiposUsuariosBuscado.TituloTipoUsuario = tiposusuarios.TituloTipoUsuario;
-                    tiposUsuariosBuscado.IdTipoUsuario = tiposusuarios.IdTipoUsuario;
+                    tipoBuscado.TituloTipoUsuario = tiposusuarios.TituloTipoUsuario;
                 }
+
+                _context.TiposUsuarios.Update(tipoBuscado!);
 
                 _context.SaveChanges();
             }
@@ -36,39 +37,43 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                TiposUsuarios tiposUsuariosBuscado = _context.TiposUsuarios.Find(Id)!;
-
-                return tiposUsuariosBuscado;
+                return _context.TiposUsuarios.Find(Id)!;
             }
             catch (Exception)
             {
                 throw;
             }
         }
+        
 
         public void Cadastrar(TiposUsuarios tiposUsuarios)
         {
             try
             {
+                tiposUsuarios.IdTipoUsuario = Guid.NewGuid();
+
                 _context.TiposUsuarios.Add(tiposUsuarios);
+
                 _context.SaveChanges();
             }
             catch (Exception)
             {
                 throw;
             }
+        
         }
 
         public void Deletar(Guid Id)
         {
             try
             {
-                TiposUsuarios tiposUsuariosBuscado = _context.TiposUsuarios.Find(Id)!;
+                TiposUsuarios tipoBuscado = _context.TiposUsuarios.Find(Id)!;
 
-                if(tiposUsuariosBuscado != null)
+                if (tipoBuscado != null)
                 {
-                    _context.TiposUsuarios.Remove(tiposUsuariosBuscado); 
+                    _context.TiposUsuarios.Remove(tipoBuscado);
                 }
+
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -81,9 +86,7 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                List<TiposUsuarios> listaTiposUsuarios = _context!.TiposUsuarios.ToList();
-
-                return listaTiposUsuarios;
+                return _context.TiposUsuarios.ToList();
             }
             catch (Exception)
             {

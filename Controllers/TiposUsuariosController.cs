@@ -36,7 +36,7 @@ namespace Projeto_Event_.Controllers
 
 
 
-        [Authorize]
+
         [HttpPost]
         public IActionResult Post(TiposUsuarios tiposUsuarios)
         {
@@ -52,7 +52,7 @@ namespace Projeto_Event_.Controllers
             }
         }
 
-        [Authorize]
+     
         [HttpPut("{Id}")]
         public IActionResult Put (Guid Id, TiposUsuarios tiposUsuarios)
         {

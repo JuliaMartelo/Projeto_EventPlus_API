@@ -12,7 +12,7 @@ namespace Projeto_Event_.Domains
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "Descrição do evento é obrigatório!")]
-        public Guid Descrição { get; set; }
+        public Guid Descricao { get; set; }
 
         [Column(TypeName = "BIT")]
         [Required(ErrorMessage = "O exibir é obrigatório!")]

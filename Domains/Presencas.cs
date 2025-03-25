@@ -8,7 +8,7 @@ namespace Projeto_Event_.Domains
     public class Presencas
     {
         [Key]
-        public Guid IdPresença { get; set; }
+        public Guid IdPresenca { get; set; }
 
         [Column(TypeName = "BIT")]
         [Required(ErrorMessage = "A situação é obrigatoria!")]
@@ -17,12 +17,12 @@ namespace Projeto_Event_.Domains
         public Guid IdUsuario { get; set; }
 
         [ForeignKey("IdUsuario")]
-        public Usuarios? Usuario { get; set; }
+        public Usuarios? Usuarios { get; set; }
 
-        public Guid EventosID { get; set; }
+        public Guid IdEventos { get; set; }
 
         [ForeignKey ("IdEvento")]
-        public Eventos? eventos { get; set; }  
+        public Eventos? Eventos { get; set; }  
         
     }
 }

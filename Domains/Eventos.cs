@@ -25,12 +25,12 @@ namespace Projeto_Event_.Domains
 
         public Guid TipoEventoID { get; set; }
         [ForeignKey("TipoEventoID")]
-        public TiposEventos? tipoevento { get; set; }
+        public TiposEventos? Tipoevento { get; set; }
 
         
         public Guid InstituicoesID { get; set; }
         [ForeignKey("InstituicoesID")]
-        public Instituicoes? instituicao { get; set; }
+        public Instituicoes? Instituicao { get; set; }
 
 
         public Presencas? presencas { get; set; }

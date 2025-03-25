@@ -23,6 +23,15 @@ builder.Services.AddDbContext<Event_Context>(options =>
 
 // Inje??o de depend?ncia dos reposit?rios
 builder.Services.AddScoped<ITiposEventos, TiposEventosRepository>();
+builder.Services.AddScoped<ITiposUsuarios, TiposUsuariosRepository>();
+builder.Services.AddScoped<IUsuarios, UsuariosRepository>();
+builder.Services.AddScoped<IEventos, EventosRepository>();
+builder.Services.AddScoped<IComentariosEventos, ComentariosEventosRepository>();
+builder.Services.AddScoped<IPresencas, PresencasRepostory>();
+
+
+
+
 
 
 //Adiciona o servi?o de Controllers
