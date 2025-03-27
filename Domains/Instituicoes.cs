@@ -19,7 +19,7 @@ namespace Projeto_Event_.Domains
         
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "O endereço é obrigatória!")]
-        public string? Endereço { get; set; }
+        public string? Endereco { get; set; }
 
 
         [Column(TypeName = "VARCHAR(100)")]

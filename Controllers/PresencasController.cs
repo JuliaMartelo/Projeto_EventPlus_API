@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Projeto_Event_.Domains;
 using Projeto_Event_.Interfaces;
+using Projeto_Event_.Repository;
 
 namespace Projeto_Event_.Controllers
 {
@@ -16,35 +17,26 @@ namespace Projeto_Event_.Controllers
             _presencasRepository = presencasRepository;
         }
 
-        [HttpPut]
 
-
-        public IActionResult Put(Guid Id, Presencas presencas)
+        /// <summary>
+        /// Endpoint para cadastrar novo evento
+        /// </summary>
+        [HttpPost]
+        public IActionResult Post(Presencas presencaRepository)
         {
             try
             {
-                _presencasRepository.Atualizar(Id, presencas);
-                return NoContent();
+                _presencasRepository.Inscricao(presencaRepository);
+                return Created();
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                throw;
+                return BadRequest(error.Message);
             }
         }
 
-        [HttpDelete("{Id}")]
-        public IActionResult Delete(Guid Id)
-        {
-            try
-            {
-                _presencasRepository.Deletar(Id);
-                return NoContent();
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+       
+
 
         [HttpGet]
         public IActionResult Get()
@@ -72,6 +64,21 @@ namespace Projeto_Event_.Controllers
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        [HttpPut("{Id}")]
+        public IActionResult Put(Guid id, Presencas presencas)
+        {
+            try
+            {
+                _presencasRepository.Atualizar(id, presencas);
+
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
 

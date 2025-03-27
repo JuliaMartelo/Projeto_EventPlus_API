@@ -180,3 +180,5 @@ C:\Users\70916680142\Desktop\Projeto_EventPlus_API\bin\Debug\net8.0\Swashbuckle.
 C:\Users\70916680142\Desktop\Projeto_EventPlus_API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\70916680142\Desktop\Projeto_EventPlus_API\obj\Debug\net8.0\Projeto Event+.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\70916680142\Desktop\Projeto_EventPlus_API\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+C:\Users\70916680142\Desktop\Projeto_EventPlus_API\bin\Debug\net8.0\Projeto Event+.xml
+C:\Users\70916680142\Desktop\Projeto_EventPlus_API\obj\Debug\net8.0\Projeto Event+.xml

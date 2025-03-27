@@ -1,8 +1,9 @@
 ﻿using System.Linq;
-using api_filmes_senai.Utils;
+
 using Projeto_Event_.Context;
 using Projeto_Event_.Domains;
 using Projeto_Event_.Interfaces;
+using Projeto_Event_.Utils;
 using static Projeto_Event_.Repository.UsuariosRepository;
 
 namespace Projeto_Event_.Repository

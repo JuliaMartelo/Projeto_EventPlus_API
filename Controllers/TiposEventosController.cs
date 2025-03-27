@@ -69,7 +69,7 @@ namespace Projeto_Event_.Controllers
             {
                 _tiposEventosRepository.Atualizar(id, tiposEventos);
 
-                return NoContent();
+                return StatusCode(204, tiposEventos);
             }
             catch (Exception e)
             {

@@ -1,6 +1,6 @@
-﻿using api_filmes_senai.Utils;
+﻿using Projeto_Event_.Utils;
 
-namespace api_filmes_senai.Utils
+namespace Projeto_Event_.Utils
 {
     public static class Criptografia
     {

@@ -90,7 +90,7 @@ namespace Projeto_Event_.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{ListarId}")]
         public IActionResult Get(Guid Id)
         {
             try
@@ -104,7 +104,7 @@ namespace Projeto_Event_.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{ListarProximoEvento}")]
         public IActionResult ListarProximoEvento()
         {
             try

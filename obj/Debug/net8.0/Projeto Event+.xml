@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Projeto Event+</name>
+    </assembly>
+    <members>
+        <member name="P:Projeto_Event_.Context.Event_Context.Usuarios">
+            <summary>
+            Define que as tabelas se transformarao em tabelas no BD
+            </summary>
+        </member>
+        <member name="M:Projeto_Event_.Controllers.LoginController.Login(Projeto_Event_.DTO.LoginDTO)">
+            <summary>
+            Endpoint para realizar a autenticação (Login)
+            </summary>
+            <param name="loginDTO">Email e senha do usuário</param>
+            <returns>Token de acesso</returns>
+        </member>
+        <member name="M:Projeto_Event_.Controllers.PresencasController.Post(Projeto_Event_.Domains.Presencas)">
+            <summary>
+            Endpoint para cadastrar novo evento
+            </summary>
+        </member>
+        <member name="T:Projeto_Event_.Migrations.EventPlus">
+            <inheritdoc />
+        </member>
+        <member name="M:Projeto_Event_.Migrations.EventPlus.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Projeto_Event_.Migrations.EventPlus.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Projeto_Event_.Migrations.EventPlus.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

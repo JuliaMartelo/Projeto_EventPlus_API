@@ -4,12 +4,12 @@ using Projeto_Event_.Interfaces;
 
 namespace Projeto_Event_.Repository
 {
-    public class PresencasRepostory : IPresencas
+    public class PresencasRepository : IPresencas
 
     {
         private readonly Event_Context? _context;
 
-        public PresencasRepostory(Event_Context context)
+        public PresencasRepository(Event_Context context)
         {
             _context = context;
         }
@@ -18,7 +18,7 @@ namespace Projeto_Event_.Repository
         {
             try
             {
-                Presencas presencaEventoBuscado = _context.Presencas.Find(Id)!;
+                Presencas presencaEventoBuscado = _context?.Presencas.Find(Id)!;
 
                 if (presencaEventoBuscado != null)
                 {

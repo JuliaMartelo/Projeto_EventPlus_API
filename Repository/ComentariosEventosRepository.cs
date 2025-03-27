@@ -137,7 +137,7 @@ namespace Projeto_Event_.Repository
                             NomeEvento = c.Eventos!.NomeEvento,
                         }
 
-                    }).Where(c => c.Exibe == true && c.IdEvento == id).ToList();
+                    }).Where(c => c.Exibe== true && c.IdEvento == id).ToList();
             }
             catch (Exception)
             {

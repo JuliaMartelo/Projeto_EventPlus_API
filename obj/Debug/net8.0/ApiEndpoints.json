@@ -112,32 +112,6 @@
   },
   {
     "ContainingType": "Projeto_Event_.Controllers.EventosController",
-    "Method": "Get",
-    "RelativePath": "api/Eventos",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Guid",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Projeto_Event_.Controllers.EventosController",
-    "Method": "ListarProximoEvento",
-    "RelativePath": "api/Eventos",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Projeto_Event_.Controllers.EventosController",
     "Method": "GetById",
     "RelativePath": "api/Eventos/{Id}",
     "HttpMethod": "GET",
@@ -147,6 +121,75 @@
       {
         "Name": "Id",
         "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.EventosController",
+    "Method": "Get",
+    "RelativePath": "api/Eventos/{ListarId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "ListarId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.EventosController",
+    "Method": "ListarProximoEvento",
+    "RelativePath": "api/Eventos/{ListarProximoEvento}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ListarProximoEvento",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDTO",
+        "Type": "Projeto_Event_.DTO.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Projeto_Event_.Controllers.PresencasController",
+    "Method": "Post",
+    "RelativePath": "api/Presencas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "presencaRepository",
+        "Type": "Projeto_Event_.Domains.Presencas",
         "IsRequired": true
       }
     ],
